@@ -1,0 +1,1579 @@
+/* start of game content css */@font-face {
+    src: url(Fonts/Nosifer-Regular.ttf);
+    font-family:Nosifer;}
+
+
+
+    @font-face{
+        src:url(Fonts/Righteous-Regular.ttf);
+        font-family:info;
+    }
+
+    @font-face {
+        src: url(Fonts/StalinistOne-Regular.ttf);
+        font-family:survived;
+    }
+
+
+    @font-face {
+        src: url(Fonts/PressStart2P-Regular.ttf);
+        font-family:score;
+    }
+
+    @font-face{
+        src: url(Fonts/GrapeNuts-Regular.ttf);
+        font-family: tutorial;
+    }
+
+    @font-face{
+        src: url(Fonts/RubikGlitch-Regular.ttf);
+        font-family: XShot;
+    }
+
+    @font-face{
+        src: url(Fonts/SourceCodePro-VariableFont_wght.ttf);
+        font-family:code;
+    }
+
+
+
+       
+   
+       #shape{
+          
+           background-color: red;
+           position:absolute;
+           border-radius: 50%;
+           z-index: 9999999;
+       }
+
+      #failImg{
+          width:100vw;
+          height:100vh;
+          background-image: url('Images/wallpaper.jpg');
+      }
+
+      body{
+          
+          margin: 0px;
+          padding:0px;
+          overflow-y: hidden; 
+          overflow-x: hidden; 
+          /* opacity: 0.3; */
+          
+      }
+
+
+      .center{
+        margin: 0px !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+      }
+
+      .crossHair{
+          cursor: pointer;
+        }
+
+      .pointer{
+          cursor: pointer;
+      }
+
+      .dead{
+          background-color:black;
+          animation-name: deadB;
+          animation-duration: 2s;
+
+      }
+
+      @keyframes deadB {
+         from {background-color: white;}
+         to {background-color: black;}
+      }
+
+
+      #lossMsg{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;  
+
+
+          color:rgb(252, 0, 0);
+          position:absolute;
+          left:50%;
+          top:50%;
+          transform: translate(-50%,-50%);
+          font-size: 80px;
+          font-family:Nosifer;
+          animation-name: deadT;
+          animation-duration: 4s;
+
+          width:70%;
+          
+          
+      }
+
+      @media only screen and (max-width: 1600px) {
+        .fontSizeLoss {
+          font-size:60px;
+          
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .fontSizeLoss {
+          font-size:40px;
+          
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .fontSizeLoss {
+          font-size:25px;
+          
+        }
+    }
+
+      @keyframes deadT {
+      from {opacity: 0;}
+       to {opacity: 1;}
+      }
+
+      #playAgainL{
+          background-color: #380000;
+          color: red;
+          font-family: Nosifer;
+          font-size:20px;
+          cursor: pointer;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom:10px;  
+          
+          
+      }
+
+      .time{
+          color:white;
+      }
+
+    
+
+
+      .lossMsg{
+          display:none;
+
+      }
+
+     .noDisplay{
+         display:none !important;
+     }
+
+     .yesDisplay{
+         display:block; 
+     }
+
+     #gameDataContainer{
+        position: absolute;
+        right:10px;
+        top:10px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 370px;
+
+        grid-gap: 10px;
+     }
+
+
+     @media only screen and (max-width: 800px) {
+        #gameDataContainer {
+          left:50%;  
+          transform: translateX(-50%);
+        }
+      }
+
+
+
+
+
+
+
+
+     .Targets{
+         background-color: black;
+         font-size: 30px;
+         font-family: info;
+         color:#20C20E;
+         padding:3px;
+         border: solid #20C20E 3px;
+         text-align: center;
+         
+         
+     }
+
+     .Time{
+         background-color: black;
+         font-size: 30px;
+         font-family: info;
+         color:#20C20E;
+         padding:3px;
+         border: solid #20C20E 3px;
+         text-align: center;
+         
+     }
+
+     .tHit{
+        background-color: black;
+        font-size: 30px;
+        font-family: info;
+        color:#20C20E;
+        padding:5px;
+        border: solid #20C20E 3px;
+        border-radius: 30px;
+        grid-column:1/3;
+        margin:0 auto;
+        width:55%;
+        text-align: center;
+        padding: 10px;
+
+    }
+
+
+
+    .respawn{
+        
+        color: red;
+        font-size:20px;
+        font-family: Nosifer;
+        
+    }
+
+    /* .noButton{
+        pointer-events:none;
+
+    } */
+
+
+   #winMsg{
+    color:#99eedf;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    font-family:survived;
+    animation-name: aliveT;
+    animation-duration: 4s;
+    width:70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   }
+
+   @media only screen and (max-width: 1600px) {
+    #winMsg {
+        width:60%;
+    }
+  }
+
+   @media only screen and (max-width: 1600px) {
+    .fontSize {
+      font-size:50px;
+      letter-spacing: 15px;
+      
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .fontSize {
+      font-size:25px;
+      letter-spacing: 20px;
+    }
+  }
+
+   .trophyFlexContainer{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .scoreFlexContainer{
+    display: flex;
+    justify-content: center;
+    width:100%;
+
+   }
+
+   .bounce{
+      
+       animation-name:bounce;
+       animation-duration: 1s;
+       animation-delay:1s;
+       position:relative;
+       top:0px;
+
+   }
+
+   #Y{
+       animation-delay: 1s !important;
+       letter-spacing:-30px;
+   }
+   #o{
+    animation-delay: 1.1s !important;
+    letter-spacing:-30px;
+     }
+   #u{
+    animation-delay: 1.2s !important;
+    letter-spacing:0px;
+    
+   }
+
+   #S{
+    animation-delay: 1.3s !important;
+    letter-spacing:-30px;
+   }
+   #u2{
+    animation-delay: 1.4s !important;
+    letter-spacing:-30px;
+   }
+   #r{
+    animation-delay: 1.5s !important;
+    letter-spacing:-30px;
+   }
+   #r2{
+    animation-delay: 1.6s !important;
+    letter-spacing:-30px;
+   }
+   #v{
+    animation-delay: 1.7s !important;
+    letter-spacing:-30px;
+   }
+   #i{
+    animation-delay: 1.8s !important;
+    letter-spacing:-30px;
+   }
+   #v2{
+    animation-delay: 1.9s !important;
+    letter-spacing:-30px;
+   }
+   #e{
+    animation-delay: 2s !important;
+    letter-spacing:-30px;
+   }
+   #d{
+    animation-delay: 2.1s !important;
+    letter-spacing:-30px;
+   }
+   #E{
+    animation-delay: 2.2s !important;
+    letter-spacing:-30px;
+   }
+
+
+   
+
+   @keyframes bounce{
+       0%{top:0px;}
+       50%{top:-50px;}
+       100%{top:0px}
+   }
+
+
+   .blink{
+       animation-name: blink;
+       animation-delay: 0s;
+       animation-duration: 1s;
+       
+   }
+
+
+   @keyframes blink{
+       0%{opacity: 0;}
+       25%{opacity: 1;}
+       50%{opacity: 0;}
+       75%{opacity: 1;}
+       100%{opacity: 0;}
+   }
+
+
+   .fall{
+       position: relative;
+       top:-600px;
+       animation-name:fall;
+       animation-duration:0.5s;
+       animation-fill-mode: forwards;
+
+   }
+
+   #Y2{
+    animation-delay:0.5s;
+   }
+   #o2{
+    animation-delay:1s;
+   }
+   #u3{
+    animation-delay:1.5s;
+   }
+   #D{
+    animation-delay:0s;
+    margin-left:40px;
+   }
+   #i2{
+    animation-delay:2s;
+   }
+   #e2{
+    animation-delay:0.8s;
+   }
+   #d2{
+    animation-delay:1.8s;
+   }
+   #E2{
+    animation-delay:2.2s;
+   }
+
+   @keyframes fall{
+       0%{top:-800px;}
+       100%{top:0px;}
+       
+   }
+
+   .blinkD{
+    animation-name: blinkD;
+    
+    /* animation-duration: 1s infinite; */
+    animation:blinkD 0.5s infinite
+    
+    
+}
+
+@keyframes blinkD{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+
+   .winMsg{
+       display:none;
+   }
+
+   .alive{
+    
+        background-color:#008970 !important;
+        animation-name: aliveB;
+        animation-duration: 2s;
+
+   }
+
+   @keyframes aliveB {
+    from {background-color: white;}
+    to {background-color: #008970;}
+ }
+
+ @keyframes aliveT {
+    from {opacity: 0;}
+     to {opacity: 1;}
+    }
+
+    #score{
+        
+        font-family:score;
+        font-size: 35px;
+        color:goldenrod;
+       
+    }
+
+    @media only screen and (max-width: 1600px) {
+        #score {
+          font-size:25px;
+        }
+    }
+
+    #highscore{
+        font-family:score;
+        font-size: 35px;
+        color:goldenrod;
+        margin-left:50px;
+       
+    }
+
+    @media only screen and (max-width: 1600px) {
+        #highscore {
+          font-size:25px;
+        }
+    }
+
+    #playAgainW{
+
+        font-family:score;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 10px;
+        margin:20px 0;
+    }
+
+
+    #playAgainW:hover{
+        background-color: rgb(182, 180, 180);
+    }
+
+
+    #trophyL{
+        width:300px;
+        height:300px;
+        
+        
+    }
+
+    @media only screen and (max-width: 1600px) {
+        #trophyL {
+            width:150px;
+            height:150px;
+        }
+      }
+
+    .trophyL{
+        display: none;
+    }
+
+    #trophyR{
+        width:300px;
+        height:300px;
+
+    }
+
+    @media only screen and (max-width: 1600px) {
+        #trophyR {
+            width:150px;
+            height:150px;
+        }
+      }
+
+    .trophyR{
+        display: none;
+    }
+
+    .skullFlexContainer{
+        width:100%;
+        display:flex;
+        justify-content: space-around;
+    }
+
+    #skullL{
+        width:300px;
+        height:300px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        #skullL{
+          width:150px;
+          height:150px;
+        }
+      }
+
+    #skullR{
+        width:300px;
+        height:300px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        #skullR{
+          width:150px;
+          height:150px;
+        }
+
+    }
+
+    .tutorialOpacity{
+        opacity: 0.7;
+        position: absolute;
+        width:100vw;
+        height:100vh;
+        background-color: black;
+    }
+
+    #walkthrough{
+        position:absolute;
+        font-family: tutorial;
+        color:white;
+        font-size: 40px;
+        height: 100vh;
+        width: 100vw;
+        
+        
+    }
+
+    
+
+    #walkthrough1{
+        position:absolute;
+        margin-top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        text-align: center;
+        
+
+
+    }
+
+    #walkthrough2{
+        position:absolute;
+        margin-top: 34%;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 99999999;
+    }
+
+    .disappear{
+        display:none !important;
+    }
+
+    .filterBrightness{
+        filter: brightness(30%);
+    }
+
+    #walkthrough3{
+        position:absolute;
+        margin-top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        text-align:unset;
+        font-size: 30px;
+        z-index: 99999999;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        #walkthrough3{
+            width: 80%;
+          text-align: unset;
+          font-size: 30px;
+        }
+      }
+
+
+
+
+
+
+    #walkthrough4{
+        position:absolute;
+        margin-top: 20px;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 99999999;
+    }
+
+    #walkthrough5{
+        position:absolute;
+        margin-top: 20px;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 99999999;
+    }
+
+    #walkthrough6{
+        position:absolute;
+        margin-top: 20px;
+        left:50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 99999999;
+    }
+
+    #walkthrough7{
+        position:absolute;
+        
+        left:50%;
+        top:30%;
+        transform: translate(-50%,-50%);
+       
+        z-index: 99999999;
+    }
+
+    #tutArrow1{
+        position: absolute;
+        top:100%;
+        left:20%;
+        z-index: 1000;
+        width: 5vw;
+    }
+
+    #tutArrow2{
+        position: absolute;
+        width: 10vw;
+        height: 20vh;
+        top: 8vh;
+        left:38vw;
+        z-index: 1000;
+
+    }
+
+    #tutArrow3{
+        position: absolute;
+        width: 20vw; 
+        top: 6vh;
+        left:25vw;
+        z-index: 1000;
+
+    }
+
+    #tutArrow4{
+        position: absolute;
+        width: 15vw; 
+        top: 100%;
+        left:20vw;
+        z-index: 1000;
+
+    }
+
+    #main-menu{
+        background-color: black;
+         cursor: pointer;
+         position:absolute;
+         top:50px;
+         right:20px;
+         font-size: 20px;
+         font-family: info;
+         color:#20C20E;
+         padding:3px;
+         border: solid #20C20E 3px;
+    }
+
+    #main-menu:hover{
+        background-color: rgb(41, 41, 41) ;
+    }
+
+
+
+    /* end of game content css */
+
+    /* start of menu content css */
+    #skipAnimation{
+        background-color: black;
+        cursor: pointer;
+        position:absolute;
+        top:50px;
+        right: 100px;
+        font-size: 20px;
+        font-family: info;
+        color:#20C20E;
+        padding:3px;
+        border: solid #20C20E 3px;
+        z-index: 1000000;
+    }
+
+    #skipAnimation:hover{
+        background-color: rgb(41, 41, 41) ;
+    }
+
+    #startGame{
+        grid-column: 3/6;
+        width:100%;
+        height:60%;
+        margin:auto auto;
+
+        font-family: score;
+        font-size: 20px;
+        cursor: pointer;
+        /* position: absolute; */
+        z-index: 200;
+        color:#20C20E;
+        background-color: black;
+        border:3px solid #20C20E;
+        /* padding: 20px; */
+        opacity: 0;
+        border-radius: 30px;
+        animation-name:fadeIn;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+    }
+
+    @media only screen and (max-width: 500px) {
+        #startGame{
+            padding:0;
+
+        }
+       }
+
+    #startGame:hover{
+        background-color: rgb(41, 41, 41) ;
+    }
+
+    #backgroundGreen{
+        max-height: 400px;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: minmax(10%, 100px) 1fr 30px minmax(10%, 100px);
+
+        border:5px solid #20C20E;
+        background-color: black;
+        z-index: 101;
+        border-radius: 100px;
+        opacity: 0;
+        border-radius: 30px;
+        animation-name:fadeIn;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+    }
+
+   
+
+
+    #topLeft{
+        position: absolute;
+        background-color:black;
+        width: 50vw;
+        height: 50vh;
+        top:-100vh;
+        animation-name:topLeft;
+        animation-duration:0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3s;
+        
+    }
+
+    .topLeftT{
+        color: #20C20E;
+        position: absolute;
+        font-size: 200px;
+        font-family: XShot;
+        left:40%;
+        top:30%;
+    }
+
+    @keyframes topLeft{
+        0%{top:-100vh;}
+        100%{top:0vh;}
+        
+    }
+
+    #topRight{
+        position: absolute;
+        background-color: black;
+        width: 50vw;
+        height: 50vh;
+        left:100vw;
+        animation-name:topRight;
+        animation-duration:0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3.2s;
+    }
+    .topRightT{
+        color: #20C20E;
+        position: absolute;
+        font-size: 200px;
+        font-family: XShot;
+        left:40%;
+        top:30%;
+    }
+
+    @keyframes topRight{
+        0%{left:100vw;}
+        100%{left:50vw;}
+        
+    }
+
+
+    #bottomLeft{
+        position: absolute;
+        background-color: black;
+        width: 50vw;
+        height: 50vh;
+        top:50vh;
+        left:-100vw;
+        animation-name:bottomLeft;
+        animation-duration:0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3.4s;
+    }
+
+    .bottomLeftT{
+        color: #20C20E;
+        position: absolute;
+        font-size: 200px;
+        font-family: XShot;
+        left:40%;
+        top:30%;
+    }
+
+    @keyframes bottomLeft{
+        0%{left:-100vw;}
+        100%{left:0vw;}
+        
+    }
+
+
+    #bottomRight{
+        position:absolute ;
+        background-color: black;
+        width: 50vw;
+        height: 50vh;
+        left:50vw;
+        top:100vh;
+        animation-name:bottomRight;
+        animation-duration:0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3.6s;
+        
+    }
+
+    .bottomRightT{
+        color: #20C20E;
+        position: absolute;
+        font-size: 200px;
+        font-family: XShot;
+        left:40%;
+        top:30%;
+    }
+
+    @keyframes bottomRight{
+        0%{top:100vh;}
+        100%{top:50vh;}
+        
+    }
+
+
+
+     #laserBackgroundTL{
+         position: relative;
+         top: 48vh;
+         left: -10vh;
+        height: 2.5vh;
+        width: 56.5vw;
+        z-index: 1;
+
+     } 
+
+
+     #laserBackgroundTR{
+         position: relative; 
+        height: 55vh;
+        width: 1.5vw;
+        top:-4vh;
+       
+        z-index: 2;
+    } 
+
+   #laserBackgroundBL{
+        position: relative; 
+        height: 53vh;
+        width: 1.5vw;
+        left:48.5vw;
+        top:-1vh;
+        z-index: 4;
+    }  
+
+
+    #laserBackgroundBR{
+        position: relative;
+         top: 0vh;
+         left: -1vw;
+        height: 2.5vh;
+        width: 55vw;
+        z-index: 3;
+    }
+
+
+    #explodeAnimation{
+        position: absolute;
+        height: 100vh;
+        width:100vw;
+        animation-name:explode;
+        animation-duration: 6s;
+        animation-delay:4s;
+        z-index: 100;
+        background-color: white;
+        opacity: 0;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        
+    }
+
+@keyframes explode{
+    0%{opacity: 0;}
+    10%{opacity: 0.4;}
+    20%{opacity: 1;}
+    30%{opacity: 0;}
+    40%{opacity: 1;}
+    50%{opacity: 1;background-color: white;}
+    /* 55%{opacity: 0.9;}
+    60%{opacity: 0.8;}
+    80%{opacity: 0.6;}
+    90%{opacity: 0.3;} */
+    100%{opacity: 1;background-color: black;}
+    
+}
+
+#button{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    z-index: 200;
+   
+}
+
+.plane{
+    animation-name:plane;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+@keyframes plane {
+    0%{top:50%;left:50%}
+    100%{top:-50%}
+}
+
+.laserCutting{
+    position: absolute;
+    width:0;
+    z-index:99999;
+}
+
+
+#XShot{
+    color:#20C20E;
+    position:absolute;
+    font-size: 80px;
+    font-family: XShot;
+    z-index:99999;
+    border:5px solid #20C20E;
+    border-radius: 50%;
+    padding:0px 10px 0px 10px;
+}
+
+#XShot2{
+        grid-column:2/7;
+        color:#20C20E;
+        font-size: 80px;
+        font-family: XShot;
+        z-index: 10000;
+        border:5px solid #20C20E;
+        border-radius: 50%;
+        padding:0px 10px 0px 10px;  
+        
+       
+}
+
+@media only screen and (max-width: 500px) {
+    #XShot2{
+        width:80%;
+    }
+   }
+
+#laserCutting2{
+    width:100%;
+    display: block;
+    z-index: 1000;
+
+    grid-column: 2/7;
+}
+
+.X{
+    color:red;
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+
+#pageFlexContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    opacity: 0;
+    animation: fadeIn 2s linear;
+    animation-fill-mode: forwards;
+}
+
+#startGameFlexContainer{
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+#soilderRight{
+    /* flex-grow: 1; */
+    /* position: absolute; */
+    max-width: 400px;
+    /* left:70%;
+    top:30%; */
+    z-index: 300;
+    animation-name:fadeIn;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    
+}
+
+@media only screen and (max-width: 1300px) {
+   #soilderRight{
+    display: none;
+   }
+  }
+
+#soilderLeft{
+    /* flex-grow: 1; */
+    order: -1;
+    /* position: absolute; */
+    max-width: 400px;
+    /* left:6%;
+    top: 35%; */
+    z-index: 300;
+    animation-name:fadeIn;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    
+}
+
+@media only screen and (max-width: 1300px) {
+    #soilderLeft{
+     display: none;
+    }
+   }
+
+
+#bottomAnimation{
+    display: flex;
+    /* flex-grow: 1; */
+    /* position: absolute; */
+    background-color: black;
+    width:100vw;
+    /* height: 28vh; */
+    /* top:72%; */
+    z-index: 1000;
+    font-family: code;
+    color:#20C20E;
+    font-size: 20px;
+}
+
+#lineContainer{
+    align-self: flex-end;
+}
+
+#topAnimation{
+    /* flex-grow: 1; */
+    /* position: absolute; */
+    background-color: black;
+    width:100vw;
+    /* height: 28vh; */
+    /* top:0%; */
+    z-index: 1000;
+    font-family: code;
+    color:#20C20E;
+    font-size: 20px;
+}
+
+.bottomLine1{
+    margin-top: 1vh;
+}
+
+.bottomLine2{
+    margin-top: 1vh;
+}
+.bottomLine3{
+    margin-top: 1vh;
+}
+.bottomLine4{
+    margin-top: 1vh;
+}
+
+.p1a{
+    position: relative;
+    left:-40vw;
+    /* top:0px; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+    
+}
+
+
+.p1b{
+    position: relative;
+    left:-60vw;
+    /* top:-4.8vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p1c{
+    position: relative;
+    left:-200vw;
+    /* top:-9vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+
+.p2a{
+    position: relative;
+    left:-40vw;
+    /* top:0px; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p2b{
+    position: relative;
+    left:-60vw;
+    /* top:-4.8vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p2c{
+    position: relative;
+    left:-200vw;
+    /* top:-9vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+
+.p3a{
+    position: relative;
+    left:-40vw;
+    /* top:0px; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p3b{
+    position: relative;
+    left:-60vw;
+    /* top:-4.8vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p3c{
+    position: relative;
+    left:-200vw;
+    /* top:-9vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p4a{
+    position: relative;
+    left:-40vw;
+    /* top:0px; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+    
+}
+
+
+.p4b{
+    position: relative;
+    left:-60vw;
+    /* top:-4.8vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+.p4c{
+    position: relative;
+    left:-200vw;
+    /* top:-9vh; */
+    animation-name:floatRight;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: inline;
+}
+
+
+
+@keyframes floatRight {
+    0%{left:-100vw}
+    100%{left:100vw}
+}
+    
+    #difficulty{
+        grid-column: 5/7;
+        width: 90%;
+        height:40%;
+        margin:auto;
+
+
+      
+        color:#20C20E;
+        border:3px solid #20C20E;
+        font-family:score;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 30px;
+
+    }
+
+    #difficulty:hover{
+        background-color: rgb(41, 41, 41) ;
+    }
+
+    #difficultyBackground{
+        
+       opacity: 0.6;
+       position: absolute;
+       width:100vw;
+       height:100vh;
+       background-color: black;
+       z-index: 2000;
+        
+    }
+
+    #selectDifficulty{
+        position: absolute;
+        margin: auto auto;
+        z-index: 2100;
+        background-color: black;
+        border: 3px solid #20C20E;
+        border-radius: 30px;
+        width:50vw;
+        height: 50vh;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        #selectDifficulty{
+            width:90vw;
+        }
+      }
+
+    #selectDifficultyT{
+        position: absolute;
+        left:38%;
+        top:5%;
+        color:#20C20E;
+        font-family: score;
+    }
+
+    .easyT{
+        position: absolute;
+        top:15%;
+        left:22%;
+        color: #20C20E;
+        font-size: 20px;
+        font-family: score;
+    }
+
+    .mediumT{
+        position: absolute;
+        top:15%;
+        left:49%;
+        color: #20C20E;
+        font-size: 20px;
+        font-family: score;
+    }
+    .hardT{
+        position: absolute;
+        top:15%;
+        left:75%;
+        color: #20C20E;
+        font-size: 20px;
+        font-family: score;
+    }
+    #ok{
+        position: absolute;
+        top:85%;
+        left:47%;
+        color: #20C20E;
+        font-size: 20px;
+        background-color: black;
+        cursor: pointer;
+        border: 2px solid #20C20E;
+        padding:5px;
+        border-radius: 30px;
+        font-family: score;
+    }
+
+    #ok:hover{
+        background-color: rgb(41, 41, 41) ;
+    }
+
+    #difficulty-container{
+        display: flex;
+        background-color: orange;
+        height:30vh;
+        margin-top:10vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        background-image: url('Images/wallpaper.jpg');
+        cursor: pointer;
+    }
+
+    #easy{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1.1;
+        
+    }
+
+    #easy:hover{
+        border:5px solid #20C20E;
+    }
+
+    #targetEasy{
+        width:100%;
+        border-radius: 50%;
+        
+       
+    }
+
+    #medium{
+        background-image: url();
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #medium:hover{
+        border:5px solid #20C20E;
+    }
+
+    #targetMedium{
+        width:80%;
+        border-radius: 50%;
+    }
+
+    #hard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    #hard:hover{
+        border:5px solid #20C20E;
+    }
+
+    #targetHard{
+        width:70%;
+        border-radius: 50%;
+    }
+
+    .targetSizeE{
+        width:250px;
+        height:250px;
+        margin:150px 0px 0px 150px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .targetSizeM{
+        width:200px;
+        height:200px;
+        margin:100px 0px 0px 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .targetSizeH{
+        width:150px;
+        height:150px;
+        margin:75px 0px 0px 75px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    #godMode{
+        position: absolute;
+        top:0px;
+        z-index: 10000;
+        width:10px;
+        background-color:#20C20E;
+    }
+
+
+#hacksModeOn{
+    position: absolute;
+    top:0px;
+    width:100vw;
+    height:100vh;
+    background-color: black;
+    z-index: 1000000000;
+}
+
+
+
+.hacksModeOnT{
+    position: absolute;
+    color:#20C20E;
+    font-family:code;
+    top:20%;
+    left:20%;
+    font-size: 150px;
+    animation-name:hacks;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes hacks {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+
+}
+

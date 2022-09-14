@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="xshot.css">
+        
+
+        <style type="text/css">
+            body {cursor: url(http://www.rw-designer.com/cursor-extern.php?id=23292);}
+            </style>
+            
+    </head>
+    <body  id="body" >
+
+
+
+        <!--Start of HTML5 game content -->
+
+        
+
+
+        <div class="tutorialOpacity" id="tutorialOpacityDiv"></div>
+
+
+
+        <div class="walktrough disappear" id="walkthrough">
+            <div class="w1 disappear" id="walkthrough1">This Game tests reaction time and accuracy with your mouse.</div>
+            <div class="w2 disappear" id="walkthrough2">Click anywhere to learn how to play!</div>
+            <div class="walktrough3 disappear" id="walkthrough3"><img src="Images/tutArrow1.png" id="tutArrow1">Everytime you hit this target it will move to a new random<br> part
+                 of the screen. The aim of the game is to hit the target<br> as many times as possible. If you miss the target you will LOSE!</div>
+            <div class="walktrough4 disappear" id="walkthrough4"><img src="Images/tutArrow2.png" id="tutArrow2">You have 10 seconds to play,<br> after the time is up the game is finished!</div>
+            <div class="walktrough5 disappear" id="walkthrough5"><img src="Images/tutArrow2.png" id="tutArrow3">You have to hit 10 targets or more<br> or else you will LOSE!</div>
+            <div class="walktrough6 disappear" id="walkthrough6"><img src="Images/tutArrow2.png" id="tutArrow4">This records the amount of<br> targets you have hit!</div>
+            <div class="walktrough7 disappear" id="walkthrough7">Good Luck & Have Fun!</div>
+        </div>
+
+        <!-- <p class="time">Your time:<span  id="time"></span></p> -->
+
+       
+
+       
+        <div id="failImg"></div>
+       <!-- <div ></div> -->
+       <img src="Images\targetImg.jpg" id="shape" class="filterBrightness" draggable="false">
+
+       <div id="gameDataContainer">
+            <div class="Targets filterBrightness" id="Targets">Targets:0</div>
+            <div class="Time filterBrightness" id="Time">Time:10s</div>
+            <div class="tHit filterBrightness" id="tHit">Targets Hit:0</div>
+        </div>    
+       
+       
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <script src="xshot.js" async defer></script>
+       
+       
+       <div class='disappear' id="winMsg" >
+           <div class="fontSize">
+               <span id="Y" class="bounce">Y</span>
+               <span id="o" class="bounce">o</span>
+               <span id="u" class="bounce">u</span>
+               
+               <span id="S" class="bounce">S</span>
+               <span id="u2" class="bounce">u</span>
+               <span id="r2" class="bounce">r</span>
+               <span id="v" class="bounce">v</span>
+               <span id="i" class="bounce">i</span>
+               <span id="v2" class="bounce">v</span>
+               <span id="e" class="bounce">e</span>
+               <span id="d" class="bounce">d</span>
+               <span id="E" class="bounce">&#33;</span>
+            </div>
+            <div class="scoreFlexContainer">
+                <div id="score" >Score:</div>
+                <div id="highscore" >Highscore:</div>
+            </div>
+        <button id='playAgainW'>Play Again?</button>
+        <div class="trophyFlexContainer">
+            <img src="Images/trophyG.png" id="trophyL" class="disappear blinkD">
+            <img src="Images/trophyG.png" id="trophyR" class="disappear blinkD">
+        </div>
+    </div>
+       
+       
+       <div id='lossMsg' class="disappear">
+           <div class="fontSizeLoss">
+               <span id="Y2" class="fall">Y</span>
+               <span id="o2" class="fall">o</span>
+               <span id="u3" class="fall">u</span>
+               <span id="D" class="fall">D</span>
+               <span id="i2" class="fall">i</span>
+               <span id="e2" class="fall">e</span>
+               <span id="d2" class="fall">d</span>
+               <span id="E2" class="fall">!</span>
+           </div>
+           <button id='playAgainL'>Play Again?</button>
+           <div class="respawn blinkD" span id='respawn'>Score:0</div>
+
+           <div class="skullFlexContainer">
+            <img src="Images/deadImgG.png" id='skullL' class="disappear blinkD">
+            <img src="Images/deadImgG.png" id='skullR' class="disappear blinkD">
+           </div>
+        </div>
+
+
+
+        <button id='main-menu' class="disappear">Return to Main Menu!</button>
+   
+
+       
+
+
+        <!-- End of HTML5 game content  -->
+
+         <!-- Start of HTML5 home screen content -->
+
+
+        <button id="button">Button!</button>
+        <button id="skipAnimation" class="disappear">Skip Animation!</button>
+      
+        
+     
+        <div id="topLeft" class="disappear"><img src="images/laserBackgroundH.png" id="laserBackgroundTL"><div class="topLeftT">S</div></div>
+        <div id="topRight" class="disappear"><img src="images/laserBackgroundV.png" id="laserBackgroundTR"><div class="topRightT">H</div></div>
+        <div id="bottomLeft" class="disappear"><img src="images/laserBackgroundV.png" id="laserBackgroundBL"><div class="bottomLeftT">O</div></div>
+        <div id="bottomRight" class="disappear"><img src="images/laserBackgroundH.png" id="laserBackgroundBR"><div class="bottomRightT">T</div></div>
+        
+        <div class="explodeAnimation disappear" id="explodeAnimation">
+
+        </div>
+
+        <img src="Images/laserUnderlineCut.png" class="laserCutting disappear" id="laserCutting">
+        <div id="XShot" class="disappear"><span class='X'>X-</span>Shot</div>
+
+
+
+        <section id="pageFlexContainer" class="disappear">
+
+        <div id="topAnimation" class="disappear">
+            <div class="bottomLine1">
+                <p class="p1a">
+                    let x = 5;
+                    let y = 6;
+                    let z = x + y;</p>
+                <p class="p1b">
+                    objectName["propertyName"]
+                    Math.round(4.4);
+                    Math.ceil(8.3);
+                </p>
+                <p class="p1c">
+                    let x = 0;
+                    Boolean(x);
+                    Math.trunc(-4.2);
+                </p> 
+            </div>
+            <div class="bottomLine2">
+                <p class="p2a">
+                    if (time &#62; 10) {
+                        greeting = "Good morning";
+                      } 
+                      
+                </p>
+                <p class="p2b">
+                    else if (time &#62; 20) {
+                        greeting = "Good day";}
+                </p>
+                <p class="p2c">
+                else {
+                    greeting = "Good evening";
+                  }
+                </p>
+            </div>
+            <div class="bottomLine3">
+                <p class="p3a">
+                    for (let i = 0; i &lt; 5; i++) {
+                        text += "The number is " + i + "<br>";
+                      }
+                </p>
+                <p class="p3b">
+                    while (i &lt;  10) {
+                        text += "The number is " + i;
+                        i++;
+                      }
+                </p>
+                <p class="p3c">
+                    let language = "JavaScript";
+                     let text = "";
+                     for (let x of language) {
+                     text += x;
+                       }
+                </p>
+            </div>
+            <div class="bottomLine4">
+                <p class='p4a'>
+                    hello = function() {
+                        return "Hello World!";
+                      }
+                </p>
+                <p class='p4b'>
+                    const array_name = [item1, item2, ...];
+                </p>
+                <p class='p4c'>
+
+                    
+                    class ClassName {
+                        constructor() { ... }
+                      }
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <main id="startGameFlexContainer">
+
+       
+
+
+
+
+        <div id="backgroundGreen" class="disappear">
+
+            <button id='difficulty'>Difficulty</button>
+            
+            <div id="XShot2" class="disappear"><span class="X">X-</span>Shot</div>
+            <img src="Images/laserUnderlineCut.png" id="laserCutting2" class="disappear">
+
+            <button id="startGame" class="disappear">Start Game?</button>
+            
+            
+        </div>
+
+
+        <div id="difficultyBackground" class="disappear"></div>
+        <div id="selectDifficulty" class="disappear">
+            <div id="selectDifficultyT">Select Difficulty</div>
+            <div class="easyT">EASY</div>
+            <div class="mediumT">MEDIUM</div>
+            <div class="hardT">HARD</div>
+            <button id="ok">OK!</button>
+            <div id="difficulty-container">
+            <div id="easy"><img src="Images\targetImg.jpg" id="targetEasy"></div>
+            <div id="medium"><img src="Images\targetImg.jpg" id="targetMedium"></div>
+            <div id="hard"><img src="Images\targetImg.jpg" id="targetHard"></div>
+        </div>
+    </div>
+    
+        
+        <img src="Images/soilderGif.gif" id="soilderRight" class="disappear">
+        <img src="Images/soilderGif2.gif" id="soilderLeft" class="disappear" >
+
+
+    </main>    
+
+
+        <div id="bottomAnimation" class="disappear">
+            <div id="lineContainer">
+            <div class="bottomLine1">
+                <p class="p1a">
+                    let x = 5;
+                    let y = 6;
+                    let z = x + y;</p>
+                <p class="p1b">
+                    objectName["propertyName"]
+                    Math.round(4.4);
+                    Math.ceil(8.3);
+                </p>
+                <p class="p1c">
+                    let x = 0;
+                    Boolean(x);
+                    Math.trunc(-4.2);
+                </p> 
+            </div>
+            <div class="bottomLine2">
+                <p class="p2a">
+                    if (time &#62; 10) {
+                        greeting = "Good morning";
+                      } 
+                      
+                </p>
+                <p class="p2b">
+                    else if (time &#62; 20) {
+                        greeting = "Good day";}
+                </p>
+                <p class="p2c">
+                else {
+                    greeting = "Good evening";
+                  }
+                </p>
+            </div>
+            <div class="bottomLine3">
+                <p class="p3a">
+                    for (let i = 0; i &lt; 5; i++) {
+                        text += "The number is " + i + "<br>";
+                      }
+                </p>
+                <p class="p3b">
+                    while (i &lt;  10) {
+                        text += "The number is " + i;
+                        i++;
+                      }
+                </p>
+                <p class="p3c">
+                    let language = "JavaScript";
+                     let text = "";
+                     for (let x of language) {
+                     text += x;
+                       }
+                </p>
+            </div>
+            <div class="bottomLine4">
+                <p class='p4a'>
+                    hello = function() {
+                        return "Hello World!";
+                      }
+                </p>
+                <p class='p4b'>
+                    const array_name = [item1, item2, ...];
+                </p>
+                <p class='p4c'>
+                    class ClassName {
+                        constructor() { ... }
+                      }
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+
+
+       
+        <!-- End of HTML5 home screen content -->
+
+
+
+
+    
+
+
+      <input type="text" id="godMode" class="disappear" autocomplete="off">
+      <div id="hacksModeOn" class="disappear">
+          <p class="hacksModeOnT hacks ">HACKS MODE ON</p>
+      </div>
+
+
+
+
+            
+    </body>
+</html>
