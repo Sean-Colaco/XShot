@@ -3,7 +3,7 @@ Created with Vanilla JS by Sean Colaco
 # How To Play
 ## Home Screen
 <img src='/readMeImages/XShot%20-%20HomeScreen.png'>
-1) After pressing the button that first appears on screen when the game is loaded a short animation will run and then the user will be greeted by this home screen.
+1) After pressing the button that first appears on screen when the game is loaded a short animation will run and then the user will be greeted by this home screen(Remember to play the game with your volume up to hear all the interactive sound effects).
 
 
 ## Difficulty
